@@ -279,7 +279,9 @@ function short(addr) {
 }
 
 function tilePalette(value) {
-  if (!value) return { bg: "#020617", color: "#4b5563" };
+  if (!value) {
+    return { bg: "#3b3f4a", color: "#9ca3af" };  // LIGHT EMPTY TILE
+  }
   if (value === 2) return { bg: "#111827", color: "#e5e7eb" };
   if (value === 4) return { bg: "#1f2937", color: "#e5e7eb" };
   if (value === 8) return { bg: "#0369a1", color: "#e5e7eb" };
@@ -292,6 +294,7 @@ function tilePalette(value) {
   if (value >= 1024) return { bg: "#22c55e", color: "#022c22" };
   return { bg: "#111827", color: "#e5e7eb" };
 }
+
 
 async function ensureBaseNetwork() {
   if (!window.ethereum) return;
